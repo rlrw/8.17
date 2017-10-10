@@ -1,0 +1,120 @@
+<include file="Public:head" />
+<body>
+<div class="content_menu_fr" style="width: 100%">
+            <h1  class="text-center">基础参数设置</h1>
+            <div class="content_menu_setting form-inline">
+                <div class="form-group">
+                    <label>银行名称：</label>
+                    <select  class="form-control">
+                        <foreach name="bank_list" item="val">
+                            <option value="{$val.bank_name}" class="bank">{$val.bank_name}</option>
+                        </foreach>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>户主：</label>
+                    <input type="text" class="form-control"  name="user"  placeholder="" value="">
+                </div>
+                <div class="form-group">
+                    <label>银行卡号：</label>
+                    <input type="text" class="form-control"  name="card"  placeholder="" value="">
+                </div>
+                <div class="form-group">
+                    <button type="button" class="btn btn-danger" id="Basics_add">添加</button>
+                </div>
+            </div>
+            <div class="Basics_setting">
+                <div class="staff_information-menu" >
+                    <table>
+                        <thead>
+                        <tr>
+                            <th><span>银行名称</span></th>
+                            <th><span>户主</span></th>
+                            <th><span>银行卡号</span></th>
+                            <th><span style="border-right: 0px;">操作</span></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <foreach name="user" item="val">
+                            <tr>
+                                <td>{$val.bank_name}</td>
+                                <td>{$val.user_name}</td>
+                                <td>{$val.bank_card}</td>
+                                <td nid="{$val.b_id}">删除</td>
+                            </tr>
+                        </foreach>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        +function () {
+            $("#Basics_add").click(function () {
+                if($(".form-control").val()===""){
+                    alert("请填写要添加的内容！")
+                }else {
+                    if(confirm("确认要添加吗？")){
+                        var bank=$(".bank:selected").val();
+                        var user=$("input[name='user']").val();
+                        var card=$("input[name='card']").val();
+                        $.post("{:U('Index/add_basics')}",{bank_name:bank,user_name:user,bank_card:card},function(e){
+                            if(e==1){
+                                var html="";
+                                $(".form-control").each(function () {
+                                    var val=$(this).val();
+                                    html+="<td>"+val+"</td>";
+                                });
+                                $(".Basics_setting tbody").append("<tr>"+html+"<td>删除</td></tr>");
+                            }else{
+                                alert("添加失败！");
+                            }
+                        });
+                    }else {
+                        return;
+                    }
+                }
+            });
+            $(document).on("click",".Basics_setting tr td:last-child",RemoveProcess);
+            function RemoveProcess() {
+                if(confirm("确认要删除吗？")){
+                    var x=$(this);
+                    $.post("{:U('Index/del_basics')}",{nid:$(this).attr("nid")},function(e){
+                        if(e==1){
+                            x.parent().remove();
+                        }else{
+                            alert("删除失败，请重新尝试！");
+                        }
+                    });
+
+                }else {
+                    return;
+                }
+            }
+            $(".content_menu_fl p").click(function(){
+                if($(this).attr("class")=="p_first-child"){
+                    $(this).removeClass("p_first-child").children("i").addClass("glyphicon-plus").removeClass("glyphicon-minus");
+                    $(this).next("div").slideUp();
+                    $(this).siblings("p").each(function () {
+                        if($(this).attr("class")=="p_first-child"){
+                            $(this).removeClass("p_first-child").children("i").addClass("glyphicon-plus").removeClass("glyphicon-minus");
+                            $(this).next("div").slideDown();
+                        }
+                    });
+                }else {
+                    $(this).addClass("p_first-child").children("i").removeClass("glyphicon-plus").addClass("glyphicon-minus");
+                    $(this).next("div").slideDown();
+                    $(this).siblings("p").each(function () {
+                        if($(this).attr("class")=="p_first-child"){
+                            $(this).removeClass("p_first-child").children("i").addClass("glyphicon-plus").removeClass("glyphicon-minus");
+                            $(this).next("div").slideUp();
+                        }
+                    });
+                }
+            });
+
+        }();
+    </script>
+</body>
+</html>

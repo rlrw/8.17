@@ -1,0 +1,246 @@
+[ 2017-09-07T09:08:50+08:00 ] 127.0.0.1 /
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.010000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.109000s ]
+NOTIC: [8] Undefined index: act D:\phpStudy\WWW\8.17\application\default\Lib\Action\BaseAction.class.php 第 8 行.
+NOTIC: [8] Undefined index: id D:\phpStudy\WWW\8.17\application\default\Lib\Action\IndexAction.class.php 第 6 行.
+
+[ 2017-09-07T09:08:50+08:00 ] 127.0.0.1 /index.php/Login/index.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.018000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.018000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8] Undefined index: act D:\phpStudy\WWW\8.17\application\default\Lib\Action\BaseAction.class.php 第 8 行.
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.085000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.086000s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.007000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.002000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.002000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.013000s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.002000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2017-09-07T09:09:16+08:00 ] 127.0.0.1 /index.php/Login/login
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.002000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: act D:\phpStudy\WWW\8.17\application\default\Lib\Action\BaseAction.class.php 第 8 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.006000s ]
+SQL: SELECT * FROM `user` WHERE ( `userid` = 'cxh20171' ) AND ( `password` = 'f379eaf3c831b04de153469d1bec345e' ) LIMIT 1   [ RunTime:0.003000s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\phpStudy\WWW\8.17\library\ThinkPHP\Common\functions.php 第 572 行.
+SQL: UPDATE `user` SET `last_login`='2017-09-07 09:09:16',`last_ip`='127.0.0.1' WHERE ( id = 1 ) [ RunTime:0.002000s ]
+
+[ 2017-09-07T09:09:18+08:00 ] 127.0.0.1 /index.php/Index/index.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: act D:\phpStudy\WWW\8.17\application\default\Lib\Action\BaseAction.class.php 第 8 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.005000s ]
+SQL: SELECT * FROM `user` LEFT JOIN level on user.dls_lv=level.level_id WHERE ( `id` = '1' ) LIMIT 1   [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `fx_user` [ RunTime:0.004000s ]
+SQL: SELECT `uid`,`pid` FROM `fx_user`  [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `fx_record` [ RunTime:0.004000s ]
+SQL: select sum(money),time from (select uid,money,DATE_FORMAT(datetime,'%y-%c')time from fx_record) as a group by time [ RunTime:0.002000s ]
+
+[ 2017-09-07T09:20:15+08:00 ] 127.0.0.1 /index.php/Index/index.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.101000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.115000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: act D:\phpStudy\WWW\8.17\application\default\Lib\Action\BaseAction.class.php 第 8 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.005000s ]
+SQL: SELECT * FROM `user` LEFT JOIN level on user.dls_lv=level.level_id WHERE ( `id` = '1' ) LIMIT 1   [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `fx_user` [ RunTime:0.004000s ]
+SQL: SELECT `uid`,`pid` FROM `fx_user`  [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `fx_record` [ RunTime:0.005000s ]
+SQL: select sum(money),time from (select uid,money,DATE_FORMAT(datetime,'%y-%c')time from fx_record) as a group by time [ RunTime:0.002000s ]
+
+[ 2017-09-07T09:20:27+08:00 ] 127.0.0.1 /index.php/Index/index.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: act D:\phpStudy\WWW\8.17\application\default\Lib\Action\BaseAction.class.php 第 8 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.005000s ]
+SQL: SELECT * FROM `user` LEFT JOIN level on user.dls_lv=level.level_id WHERE ( `id` = '1' ) LIMIT 1   [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `fx_user` [ RunTime:0.003000s ]
+SQL: SELECT `uid`,`pid` FROM `fx_user`  [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `fx_record` [ RunTime:0.004000s ]
+SQL: select sum(money),time from (select uid,money,DATE_FORMAT(datetime,'%y-%c')time from fx_record) as a group by time [ RunTime:0.002000s ]
+
+[ 2017-09-07T10:33:53+08:00 ] 127.0.0.1 /index.php/Index/index.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.035000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.045000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-09-07T10:33:55+08:00 ] 127.0.0.1 /index.php/Index/index.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-09-07T10:33:55+08:00 ] 127.0.0.1 /index.php/Index/index.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-09-07T10:33:57+08:00 ] 127.0.0.1 /index.php
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-09-07T10:33:57+08:00 ] 127.0.0.1 /index.php
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-09-07T10:34:03+08:00 ] 127.0.0.1 /index.php/Index/index.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: act D:\phpStudy\WWW\8.17\application\default\Lib\Action\BaseAction.class.php 第 8 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.006000s ]
+SQL: SELECT * FROM `user` LEFT JOIN level on user.dls_lv=level.level_id WHERE ( `id` = '1' ) LIMIT 1   [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `fx_user` [ RunTime:0.004000s ]
+SQL: SELECT `uid`,`pid` FROM `fx_user`  [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `fx_record` [ RunTime:0.005000s ]
+SQL: select sum(money),time from (select uid,money,DATE_FORMAT(datetime,'%y-%c')time from fx_record) as a group by time [ RunTime:0.002000s ]
+SQL: select sum(money),time from (select uid,money,DATE_FORMAT(datetime,'%y-%c')time from fx_record) as a group by time where time=2017-09 [ RunTime:0.002000s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'where time=2017-09' at line 1
+ [ SQL语句 ] : select sum(money),time from (select uid,money,DATE_FORMAT(datetime,'%y-%c')time from fx_record) as a group by time where time=2017-09
+
+[ 2017-09-07T10:34:05+08:00 ] 127.0.0.1 /index.php/Index/index.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: act D:\phpStudy\WWW\8.17\application\default\Lib\Action\BaseAction.class.php 第 8 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.005000s ]
+SQL: SELECT * FROM `user` LEFT JOIN level on user.dls_lv=level.level_id WHERE ( `id` = '1' ) LIMIT 1   [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `fx_user` [ RunTime:0.003000s ]
+SQL: SELECT `uid`,`pid` FROM `fx_user`  [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `fx_record` [ RunTime:0.003000s ]
+SQL: select sum(money),time from (select uid,money,DATE_FORMAT(datetime,'%y-%c')time from fx_record) as a group by time [ RunTime:0.002000s ]
+SQL: select sum(money),time from (select uid,money,DATE_FORMAT(datetime,'%y-%c')time from fx_record) as a group by time where time=2017-09 [ RunTime:0.002000s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'where time=2017-09' at line 1
+ [ SQL语句 ] : select sum(money),time from (select uid,money,DATE_FORMAT(datetime,'%y-%c')time from fx_record) as a group by time where time=2017-09
+
+[ 2017-09-07T10:35:32+08:00 ] 127.0.0.1 /index.php/Index/index.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: act D:\phpStudy\WWW\8.17\application\default\Lib\Action\BaseAction.class.php 第 8 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.005000s ]
+SQL: SELECT * FROM `user` LEFT JOIN level on user.dls_lv=level.level_id WHERE ( `id` = '1' ) LIMIT 1   [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `fx_user` [ RunTime:0.004000s ]
+SQL: SELECT `uid`,`pid` FROM `fx_user`  [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `fx_record` [ RunTime:0.004000s ]
+SQL: select sum(money),time from (select uid,money,DATE_FORMAT(datetime,'%y-%c')time from fx_record) as a group by time [ RunTime:0.003000s ]
+SQL: select sum(money),time from fx_record where datetime=2017-09 [ RunTime:0.001000s ]
+ERR: 1054:Unknown column 'time' in 'field list'
+ [ SQL语句 ] : select sum(money),time from fx_record where datetime=2017-09
+
+[ 2017-09-07T10:35:32+08:00 ] 127.0.0.1 /index.php/Index/index.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: act D:\phpStudy\WWW\8.17\application\default\Lib\Action\BaseAction.class.php 第 8 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.004000s ]
+SQL: SELECT * FROM `user` LEFT JOIN level on user.dls_lv=level.level_id WHERE ( `id` = '1' ) LIMIT 1   [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `fx_user` [ RunTime:0.004000s ]
+SQL: SELECT `uid`,`pid` FROM `fx_user`  [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `fx_record` [ RunTime:0.004000s ]
+SQL: select sum(money),time from (select uid,money,DATE_FORMAT(datetime,'%y-%c')time from fx_record) as a group by time [ RunTime:0.002000s ]
+SQL: select sum(money),time from fx_record where datetime=2017-09 [ RunTime:0.001000s ]
+ERR: 1054:Unknown column 'time' in 'field list'
+ [ SQL语句 ] : select sum(money),time from fx_record where datetime=2017-09
+
+[ 2017-09-07T10:35:33+08:00 ] 127.0.0.1 /index.php/Index/index.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: act D:\phpStudy\WWW\8.17\application\default\Lib\Action\BaseAction.class.php 第 8 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.005000s ]
+SQL: SELECT * FROM `user` LEFT JOIN level on user.dls_lv=level.level_id WHERE ( `id` = '1' ) LIMIT 1   [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `fx_user` [ RunTime:0.004000s ]
+SQL: SELECT `uid`,`pid` FROM `fx_user`  [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `fx_record` [ RunTime:0.005000s ]
+SQL: select sum(money),time from (select uid,money,DATE_FORMAT(datetime,'%y-%c')time from fx_record) as a group by time [ RunTime:0.002000s ]
+SQL: select sum(money),time from fx_record where datetime=2017-09 [ RunTime:0.001000s ]
+ERR: 1054:Unknown column 'time' in 'field list'
+ [ SQL语句 ] : select sum(money),time from fx_record where datetime=2017-09
+
+[ 2017-09-07T10:35:51+08:00 ] 127.0.0.1 /index.php/Index/index.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: act D:\phpStudy\WWW\8.17\application\default\Lib\Action\BaseAction.class.php 第 8 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.005000s ]
+SQL: SELECT * FROM `user` LEFT JOIN level on user.dls_lv=level.level_id WHERE ( `id` = '1' ) LIMIT 1   [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `fx_user` [ RunTime:0.004000s ]
+SQL: SELECT `uid`,`pid` FROM `fx_user`  [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `fx_record` [ RunTime:0.004000s ]
+SQL: select sum(money),time from (select uid,money,DATE_FORMAT(datetime,'%y-%c')time from fx_record) as a group by time [ RunTime:0.002000s ]
+SQL: select sum(money),time from fx_record where datetime=2017-09 [ RunTime:0.002000s ]
+ERR: 1054:Unknown column 'time' in 'field list'
+ [ SQL语句 ] : select sum(money),time from fx_record where datetime=2017-09
+
+[ 2017-09-07T10:35:57+08:00 ] 127.0.0.1 /index.php/Index/index.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: act D:\phpStudy\WWW\8.17\application\default\Lib\Action\BaseAction.class.php 第 8 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.004000s ]
+SQL: SELECT * FROM `user` LEFT JOIN level on user.dls_lv=level.level_id WHERE ( `id` = '1' ) LIMIT 1   [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `fx_user` [ RunTime:0.004000s ]
+SQL: SELECT `uid`,`pid` FROM `fx_user`  [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `fx_record` [ RunTime:0.004000s ]
+SQL: select sum(money),time from (select uid,money,DATE_FORMAT(datetime,'%y-%c')time from fx_record) as a group by time [ RunTime:0.003000s ]
+SQL: select sum(money),time from fx_record where datetime=2017-09 [ RunTime:0.001000s ]
+ERR: 1054:Unknown column 'time' in 'field list'
+ [ SQL语句 ] : select sum(money),time from fx_record where datetime=2017-09
+

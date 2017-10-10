@@ -1,0 +1,108 @@
+<!DOCTYPE HTML>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <title>车享惠-用户中心</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link href="__PUBLIC__/css/index.css" rel="stylesheet">
+    <script src="__PUBLIC__/js/index.js" type="text/javascript"></script>
+    <script src="__PUBLIC__/js/jquery-3.2.1.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="__PUBLIC__/css/bootstrap.min.css" >
+    <script src="__PUBLIC__/js/city.js"></script>
+    <script src="__PUBLIC__/js/bootstrap.min.js"  type="text/javascript"></script>
+    <link href="__PUBLIC__/css/bootstrapValidator.min.css" rel="stylesheet">
+    <link href="__PUBLIC__/css/fileinput.css" rel="stylesheet">
+    <script src="__PUBLIC__/js/bootstrapValidator.min.js" type="text/javascript"></script>
+    <script src="__PUBLIC__/js/fileinput.min.js" type="text/javascript"></script>
+</head>
+<body>
+<header class="header">
+    <a href="__APP__/Login/loginout" class="header_fl fl"><span class="glyphicon glyphicon-off" style="color: #fff"></span></a>
+    <!--<a href="" class="header_fl fl"><span class="glyphicon glyphicon-menu-left" style="color: #fff"></span></a>-->
+    服务中心申请
+    <a href="__APP__/Core/index" target="_blank" class="header_fr fr"><span class="glyphicon glyphicon-user" style="color: #fff"></span></a>
+</header>
+
+<section class="section grxg_form">
+    <div class="mm_xg">
+        <ul>
+            <li class="mm_xg_hover"><a href="javascript:">服务中心申请</a></li>
+            <li><a href="{:U('Service/record')}">申请记录</a></li>
+        </ul>
+    </div>
+    <div>
+        <form id="form1" name="form" method="post" action="{:U('Service/get_service')}" style="display: block;" class="mm_xg_form" enctype="multipart/form-data">
+            <input type="hidden" name="id" value="{$user.new_id}">
+            <div class="form-group">
+                <label for="yjr_fwzx">申请级别：</label>
+                    <if condition="$user.agent_level eq '省级代理'"><input type="text" class="form-control" readonly name="service_level" placeholder="" value="省服务中心">
+                        <elseif condition="$user.agent_level eq '市级代理'" /><input type="text" class="form-control" readonly name="service_level" placeholder="" value="市服务中心">
+                        <elseif condition="$user.agent_level eq '县级代理'" /><input type="text" class="form-control" readonly name="service_level" placeholder="" value="县服务中心">
+                    </if>
+            </div>
+            <div class="form-group">
+                <label for="yjr_ssqy" style="display: block">所属区域：</label>
+                <div class="col-sm-3 col-xs-4" style="padding-right: 10px; padding-left: 0;" >
+                    <if condition="$user.province neq NUll">
+                        <input class="form-control" readonly value="{$user.province}" name="">
+                    </if>
+                </div>
+                <div class="col-sm-3 col-xs-4" style="padding-right: 10px;padding-left: 0;">
+                    <if condition="$user.city neq NUll">
+                     <input class="form-control" readonly value="{$user.city}" name="">
+                    </if>
+                </div>
+                <div class="col-sm-3 col-xs-4" style="padding-right: 10px;padding-left: 0;">
+                    <if condition="$user.county neq NUll">
+                     <input class="form-control" readonly value="{$user.province}" name="">
+                    </if>
+                </div>
+                <div class="clearfix">
+                    <input type="hidden" name="area" value="{$user.area}">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="grxg_ID">服务中心图片：</label>
+                <input name="yy_zz_pic[]"  value=""  id="file-3" type="file" multiple>
+            </div>
+
+            <input  type="submit" class="btn center-block" id="join_submit" value="提交申请">
+        </form>
+    </div>
+
+</section>
+<include file="Public:footer" />
+<script>
+        window.onload=function(){
+            var id=$("input[name='id']").val();
+            $.post("{:U('Service/check_record')}",{nid:id},function(e){
+                        if(e==1){
+                            $("form input").attr("disabled","disabled");
+                            $("form select").attr("disabled","disabled");
+                            $("#join_submit").val("审核中").attr("disabled","disabled");
+                        }else if(e==2){
+                            $("form input").attr("disabled","disabled");
+                            $("form select").attr("disabled","disabled");
+                            $("#join_submit").val("审核通过").attr("disabled","disabled");
+                        }else{
+                            $("#join_submit").val("提交申请").removeAttr("disabled");
+                            $("form input").removeAttr("disabled");
+                            $("form select").removeAttr("disabled");
+                        }
+            })
+        };
+    $(function(){
+        $("#file-3").fileinput({
+            showUpload: false,
+            showCaption: false,
+            browseClass: "btn btn-default btn-xm",
+            fileType: "any",
+            previewFileIcon: "<i class='glyphicon glyphicon-king'></i>"
+        });
+    })
+</script>
+</body>
+</html>

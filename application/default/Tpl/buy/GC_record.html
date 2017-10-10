@@ -1,0 +1,108 @@
+<!DOCTYPE HTML>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <title>车享惠-用户中心</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link href="__PUBLIC__/css/index.css" rel="stylesheet">
+    <script src="__PUBLIC__/js/index.js" type="text/javascript"></script>
+    <script src="__PUBLIC__/js/jquery-3.2.1.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="__PUBLIC__/css/bootstrap.min.css" >
+    <script src="__PUBLIC__/js/bootstrap.min.js"  type="text/javascript"></script>
+    <link href="__PUBLIC__/css/bootstrapValidator.min.css" rel="stylesheet">
+    <script src="__PUBLIC__/js/bootstrapValidator.min.js" type="text/javascript"></script>
+</head>
+<body>
+<header class="header">
+    <a href="__APP__/Login/loginout" class="header_fl fl"><span class="glyphicon glyphicon-off" style="color: #fff"></span></a>
+    <!--<a href="" class="header_fl fl"><span class="glyphicon glyphicon-menu-left" style="color: #fff"></span></a>-->
+    购车款申请
+    <a href="__APP__/Core/index" target="_blank" class="header_fr fr"><span class="glyphicon glyphicon-user" style="color: #fff"></span></a>
+</header>
+
+<section class="section grxg_form">
+    <div class="mm_xg">
+        <ul>
+            <li class="mm_xg_hover" style="background: none;"><a href="{:U('Buy/index')}" style="color: #333;">添加购车信息</a></li>
+            <li style="background: #85c125;"><a href="javascript:" style="color: #fff">购车记录</a></li>
+        </ul>
+    </div>
+    <div>
+        <div class="mm_xg_form" >
+            <table>
+                <thead>
+                <tr>
+                    <th class="w310"><span>车型</span></th>
+                    <th><span>车牌号</span></th>
+                    <th><span>购车金额</span></th>
+                    <th><span style="border-right: 0px;">购车时间</span></th>
+                </tr>
+                </thead>
+                <tbody>
+                <foreach name="buying" item="val">
+                    <tr data-toggle="modal" data-target="#r{$val.buy_id}">
+                        <td>{$val.car_model}</td>
+                        <td>{$val.plate_number}</td>
+                        <td>{$val.buy_total}</td>
+                        <td>{$val.buy_time||date="Y-m-d",###}</td>
+                    </tr>
+                    <div class="container" id="mmdo">
+                        <div class="modal fade" id="r{$val.buy_id}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <h4 class="modal-title" id="myModalLabel">
+                                            <span>{$val.time|date='Y-m-d',###}</span>
+                                <span>
+                                <if condition="$val.buy_state == 0 ">审核中<elseif condition="$val.buy_state == 1 "/> 通过<else/>未通过</if>
+                                </span>
+                                        </h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form name="form" method="post" action="" style="display: block;" class="mm_xg_form">
+                                            <div class="form-group">
+                                                <label for="grxg_ID">车牌号：</label>
+                                                <input type="text" class="form-control" readonly name="grxg_ID" placeholder="" value="{$val.plate_number}">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="grxg_ID">Vin号：</label>
+                                                <input type="text" class="form-control" readonly name="grxg_ID" placeholder="" value="{$val.vin_number}">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="grxg_ID">车型：</label>
+                                                <input type="text" class="form-control" readonly name="grxg_ID" placeholder="" value="{$val.car_model}">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="grxg_ID">购车金额：</label>
+                                                <input type="text" class="form-control" readonly name="grxg_ID" placeholder="" value="{$val.buy_total}">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="grxg_ID">购车时间：</label>
+                                                <input type="text" class="form-control" readonly name="grxg_ID" placeholder="" value="{$val.buy_time|date='Y-m-d',###}">
+                                            </div>
+
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </foreach>
+                </tbody>
+            </table>
+            <div class="grxg_form_ym">
+                {$page}
+            </div>
+
+        </div>
+    </div>
+</section>
+<include file="Public:footer" />
+
+</body>
+</html>

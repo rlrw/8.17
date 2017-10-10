@@ -1,0 +1,176 @@
+body,ul,ol,li,p,h1,h2,h3,h4,h5,h6,form,fieldset,table,td,img,div{margin:0;padding:0;border:0;}
+body{background:#fff;color:#333;font-family:"微软雅黑","SimSun","宋体","Arial Narrow";line-height: 0; margin: 0 auto;}
+ul,ol{list-style-type:none;}
+select,input,img,select,textarea{vertical-align:middle;}
+a{text-decoration:none;}
+a:link{color:#009;}
+a:visited{color:#800080;}
+a:hover,a:active,a:focus{color:#c00;text-decoration:underline;}
+.fl{ float:left;}
+.fr{ float: right;}
+/* header */
+.container_box{ padding: 0 4%;}
+body{ font-family: "Microsoft Yahei", "Lucida Grande", Verdana, Lucida, Helvetica, Arial, sans-serif;}
+.header{ width: 100%; height: 50px; line-height: 50px; background: #141414; color: #fff; font-size: 13px; cursor: pointer;}
+.header .container span{ color: #999;}
+.header .container .fl span:nth-child(2){ color: #333;}
+.header .container .fr div{ width: 130px; background: #424242; height: 50px; line-height: 50px; text-align: center; margin-left: 20px; color: #999; font-size: 13px;}
+.cont_header{ overflow: hidden;}
+.cont_header li{float: left; color: #444; margin-right: 5px; cursor: pointer; margin-top: 19px; font-size: 15px;}
+.content_menu{ overflow: hidden; width: 100%; border: 1px solid #ccc; margin-top: 2%; -webkit-box-shadoww:5px 5px 20px #666; box-shadow:3px 3px 15px #666; padding: 2%;}
+.content_menu_fl{ width: 15%;}
+.content_menu_fl p{overflow: hidden; width: 100%; height: 50px; line-height: 40px; border-top: 1px dashed #999; padding: 5px 10px; font-size: 18px;
+    cursor: pointer;border-bottom: 1px dashed #999;}
+.content_menu_fl .p_first-child{ background: url("../images/content_menu_fl_back.png") repeat ; background-size: cover; color: #fff;}
+.content_menu_fl p:hover{ background: url("../images/content_menu_fl_back.png") repeat ;background-size: cover; color: #fff;}
+.content_menu_fl p span{  font-size: 18px; margin-right: 10px;}
+.content_menu_fl p i{  float: right; font-size: 18px; font-style: normal; font-weight: bold;}
+.content_menu_fl_ct{ margin: 10px 0;}
+.content_menu_fl_ct a{ display: block;height: 42px; line-height: 42px; font-size: 15px; color: #555; text-align: center; cursor: pointer;}
+.content_menu_fl_ct a:hover{ background: #85c125; color: #fff; font-size: 16px; text-decoration: none;}
+.content_menu_fl_ct .a_hover{background: #85c125; color: #fff; font-size: 16px;}
+
+.content_menu_border{ width: 82%; border: 1px solid #ddd; margin-left: 3%;}
+.content_menu_fr h1{font-weight: normal; font-size: 24px; margin-top: 40px;}
+.content_menu_search{ margin: 40px 20px 20px 20px;}
+.content_menu_fr .content_menu_search .form-group{ margin-right: 20px; margin-bottom: 20px;}
+.content_menu_fr .content_menu_search .form-group:nth-child(3){ margin-right: 0;}
+.content_menu_search button{ margin-right: 15px;}
+.staff_information-menu table{ width: 90%; margin: 0 auto; cursor: pointer;}
+.staff_information-menu thead{ border-bottom: 1px solid #999;border-top: 1px solid #999; font-size: 18px; overflow: hidden;}
+.staff_information-menu thead th{ width: 25%;  text-align: center;  padding: 10px 0;}
+.staff_information-menu thead th span{ display: block; border-right: 1px solid #999;}
+.staff_information-menu tbody{ padding: 20px 0;}
+.staff_information-menu tbody td{ font-size: 15px; padding: 15px 0; border-bottom: 1px solid #ccc; text-align: center;}
+.grxg_form_ym{ overflow: hidden; margin: 30px auto; height: 30px; width: 50%; line-height: 30px;}
+.grxg_form_ym li{ float: left; padding: 0 15px; text-align: center; font-size: 16px; border-right: 1px solid #ccc; cursor: pointer;}
+.grxg_form_ym li:hover{ text-decoration: underline;}
+.staff_operation li{ float: left; margin: 0 5px; font-size: 15px; cursor: pointer;}
+.staff_operation li:hover{ text-decoration: underline; color: #000}
+
+#New_staff .form-group select{ width: 196px;}
+#New_staff .form-group{ margin-bottom: 30px; margin-left: 35px;}
+#New_staff form{ margin-top: 20px;}
+#New_staff .modal-content{ width: 700px;}
+/*审核流程*/
+@media screen and (max-width:1200px){
+    .content_menu_fr{ width: 70%;}
+    .staff_operation li{ float: none;}
+    .staff_operation li{ float: none; font-size: 14px;}
+    .staff_information-menu thead { font-size: 16px;}
+    .staff_information-menu tbody td{ font-size: 14px;}
+    .staff_operation li:nth-child(even){ display: none;}
+}
+@media screen and (max-width:992px){
+    .content_menu_fr{ width: 70%;}
+    .staff_operation li{ float: none; font-size: 14px;}
+    .staff_information-menu thead { font-size: 16px;}
+    .staff_information-menu tbody td{ font-size: 14px;}
+    .staff_operation li:nth-child(even){ display: none;}
+}
+@media screen and (max-width:767px){
+    .header .fl{ display: none;}
+    .content_menu_fr{ width: 100%;}
+    .staff_operation li{ float: none;}
+    .staff_operation li:nth-child(even){ display: none;}
+    .content_menu{ padding: 10px; position: relative;}
+    .content_menu_fl{width: 100%;}
+    .content_menu_fl_ct{width: 40%; position: absolute; top: 0; right: 0; background: #eee; display: none;}
+    .content_menu_fl p{ width: 100%;}
+    .content_menu_fl .p_first-child{background: url(../images/content_menu_fl_back.png) repeat center;}
+    .content_menu_border { width: 94%;}
+    .staff_information-menu thead {  font-size: 14px;  width: 100%;  }
+    .staff_information-menu thead tr th{width: 20%;}
+}
+
+.Audit_management{  margin: 40px 30px 0 30px;}
+.content_menu_fr .Audit_management select{ border-radius: 0; width: 200px; margin-right: 20px;}
+.content_menu_fr select{ border-radius: 0;}
+.Audit_management_menu{border: 1px solid #ccc; margin: 10px 30px 30px 30px;}
+.Audit_management_menu li{ padding: 20px;}
+.Audit_management_menu li table{ width:100%;font-size: 15px; cursor: pointer;}
+.Audit_management_menu li td{ text-align: center;  padding: 15px 0;}
+.Audit_management_menu li tr{border-bottom: 1px solid #ccc;  padding-bottom: 15px;}
+.Audit_management_menu li td span{ display: block; border-right: 1px solid #ddd;}
+.Audit_management_menu li td:last-child:hover{ text-decoration: underline; color: black;}
+
+/*汇款列表*/
+.hk_list{  margin: 10px 30px 30px 30px; }
+.hk_list ul:first-child li{ overflow: hidden; box-shadow: 0px 2px 5px #999; border-top: 1px solid #ddd; margin-bottom: 20px; cursor: pointer;}
+.hk_list ul:first-child li strong{ font-weight: normal; color: #000; margin-right: 5px;}
+.hk_list ul:first-child li button{ margin-right: 5px;text-decoration: underline;}
+.hk_list ul:first-child li button:last-child{ text-decoration: none;}
+.hk_list li p span{ border-right: 1px solid #dddddd; margin: 10px 0; color: #666; display: block; float: left;}
+.hk_list li span:last-child{ border-right: 0;}
+.hk_list li p{ border-bottom: 1px solid #dddddd;overflow: hidden; margin: 0;}
+/*用户等级设置*/
+.content_menu_setting label{ margin: 30px 0 20px 20px}
+.content_menu_setting button{ margin-top: 10px;}
+.content_menu_setting .form-group .form-control{ width: 160px;}
+.user_setting{ border-top: 3px solid #ccc; margin: 20px; }
+.user_setting table{ margin: 0 auto; cursor: pointer; width: 100%;}
+.user_setting thead{ border-bottom: 1px solid #ccc;border-top: 1px solid #ccc; font-size: 16px; overflow: hidden;}
+.user_setting thead th{ width: 16%;  text-align: center;  padding: 15px 0;}
+.user_setting thead th span{ display: block; border-right: 1px solid #ccc;}
+.user_setting tbody{ padding: 20px 0;}
+.user_setting tbody td{ font-size: 14px; padding: 15px 0; border-bottom: 1px solid #ccc; text-align: center;}
+.user_setting tbody tr td:last-child{ text-decoration: underline;}
+.user_setting tbody tr td:last-child:hover{ text-decoration: underline; color: black;}
+/*基础参数设置*/
+.Basics_setting{ margin-top: 20px; height: 500px;}
+.Basics_setting tbody tr td:last-child:hover{ text-decoration: underline; color: black;}
+/*代理商申请*/
+.Agent_list ul li p{  margin-bottom: 0; padding: 5px 0;}
+#Agent_list{overflow: hidden; padding: 10px;}
+#Agent_list div{  border-right: 1px solid #ccc;}
+#Agent_list div:last-child{ border-right: 0;}
+#Agent_list div span{ border: 0; color: #666;}
+#Agent_list label{ float: left; width: 45%; line-height: 26px; margin-bottom: 0; margin-top: 3px;}
+#Agent_list input{ float: left; width: 55%; padding-left: 5px;border-right: 1px solid #ccc; margin-top: 3px;}
+/*购车款申请*/
+.user_car table thead th{width: 0%;}
+.user_car tbody tr td:last-child span{ text-decoration: underline;}
+.user_car tbody tr td:last-child span:hover{ text-decoration: underline; color: black;}
+/*添加用户*/
+.section{ padding: 20px 100px;}
+/*账号管理*/
+#use_zh table thead th{width: 14%;}
+#use_zh table tbody tr td a{ text-decoration: none;}
+#use_zh tbody tr td:first-child span:hover{ text-decoration: underline;}
+#use_zh tbody tr td:first-child .spanColor{ color: red;}
+.modal-body{ overflow: hidden;}
+.modal-body li{ border-bottom: 1px solid #ddd;border-left: 1px solid #ddd; padding: 10px;}
+.modal-body li button{ margin-left: 10px;}
+.modal-body li a{ text-decoration: underline; color: #333;}
+.modal-body .border_fr{ border-right: 1px solid #ddd;;}
+.modal-body .form-group{ width: 45%; float: left; margin-right: 20px; margin-bottom: 20px; display: block}
+
+
+.Agent_image{ width: 558px; height: 320px; position: relative;}
+.Agent_image img{float: left; position: absolute;
+    top:0; left: 0;}
+
+.Agent_image_box i{ width: 20px; height: 20px; background: #204d74; display: block; float: left;font-style: normal; text-align: center; line-height: 20px; color: #fff; margin-top: 20px;
+    margin-left: 15px; opacity: 0.3;
+}
+.Agent_image_box .hover_i { background: #204d74; opacity: 1;width: 20px; height: 20px;}
+.Agent_image_box i:hover{ background: #204d74; opacity: 1;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

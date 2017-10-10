@@ -1,0 +1,251 @@
+<!DOCTYPE HTML>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <title>车享惠-用户中心</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link href="css/index.css" rel="stylesheet">
+    <script src="js/index.js" type="text/javascript"></script>
+    <script src="js/jquery-3.2.1.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css" >
+    <script src="js/bootstrap.min.js"  type="text/javascript"></script>
+    <link href="css/bootstrapValidator.min.css" rel="stylesheet">
+    <script src="js/bootstrapValidator.min.js" type="text/javascript"></script>
+</head>
+<body>
+<header class="header">
+    &nbsp;&nbsp;&nbsp;&nbsp;代理商申请
+    <a href="Uer_grxx.html" class="header_fr fr"><span class="glyphicon glyphicon-user" style="color: #fff"></span></a>
+</header>
+
+<section class="section grxg_form">
+    <div class="mm_xg">
+        <ul>
+            <li class="mm_xg_hover">我要申请</li>
+            <li>申请历史</li>
+        </ul>
+    </div>
+    <div>
+        <form name="form" method="post" action="" style="display: block;" class="mm_xg_form">
+            <div class="form-group">
+                <label for="grxg_name">用户姓名：</label>
+                <input type="text" class="form-control" disabled name="grxg_name"  placeholder="" value="张三">
+            </div>
+            <div class="form-group">
+                <label for="grxg_ID">用户ID：</label>
+                <input type="text" class="form-control" disabled name="grxg_ID" placeholder="" value="CXH7281501">
+            </div>
+            <div class="form-group">
+                <label for="yjr_fwzx">申请级别：</label>
+                <select class="form-control" name="yjr_fwzx" data-bv-notempty data-bv-notempty-message="请选择申请级别!">
+                    <option  value="">—请选择—</option>
+                    <option value="cd">省代理商</option>
+                    <option value="my">市代理商</option>
+                    <option value="my">县代理商</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="yjr_ssqy" style="display: block">所属区域：</label>
+                <div class="col-sm-3 col-xs-4" style="padding-right: 10px; padding-left: 0;" >
+                    <select class="form-control" name="yjr_ssqy" data-bv-notempty data-bv-notempty-message="请选择所属区域!">
+                        <option value="">—省份—</option>
+                        <option value="cd">成都</option>
+                        <option value="my">绵阳</option>
+                        <option value="nc">南充</option>
+                        <option value="nc">上海</option>
+                        <option value="nc">深圳</option>
+                    </select>
+                </div>
+                <div class="col-sm-3 col-xs-4" style="padding-right: 10px;padding-left: 0;">
+                    <select class="form-control" name="yjr_ssqy">
+                        <option>—市/区—</option>
+                        <option value="nc">成都</option>
+                        <option value="nc">绵阳</option>
+                        <option value="nc">南充</option>
+                        <option value="nc">上海</option>
+                        <option value="nc">深圳</option>
+                    </select>
+                </div>
+                <div class="col-sm-3 col-xs-4" style="padding-right: 10px;padding-left: 0;">
+                    <select class="form-control" name="yjr_ssqy">
+                        <option>—县—</option>
+                        <option value="nc">成都</option>
+                        <option value="nc">绵阳</option>
+                        <option value="nc">南充</option>
+                        <option value="nc">上海</option>
+                        <option value="nc">深圳</option>
+                    </select>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="form-group">
+                <label for="grxg_ID">公司名字：</label>
+                <input type="text" class="form-control"  name="company_ID" placeholder="请输入公司名字！" value="">
+            </div>
+            <div class="form-group">
+                <label for="grxg_ID">公司地址：</label>
+                <input type="text" class="form-control"  name="company_add" placeholder="请输入公司地址！" value="">
+            </div>
+            <div class="form-group">
+                <label for="grxg_ID">公司电话：</label>
+                <input type="tel" class="form-control"  name="company_tell" placeholder="请输入公司电话！" value="">
+            </div>
+            <div class="form-group">
+                <label for="grxg_ID">营业执照编号：</label>
+                <input type="text" class="form-control"  name="yy_zz_bh" placeholder="请输入营业执照编号！" value="">
+            </div>
+            <div class="form-group">
+                <label for="grxg_ID">营业执照图片：</label>
+                <input type="file" class=""  name="yy_zz_pic"  value="">
+            </div>
+            <div class="form-group" >
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" name="grxg_checkbox">我已阅读并同意弹窗的《经销商经营守则》
+                    </label>
+                </div>
+            </div>
+            <input type="submit" class="btn center-block" id="join_submit" value="提交修改">
+        </form>
+        <div class="mm_xg_form" style="display: none;">
+            <table>
+                <thead>
+                    <tr>
+                        <th><span>申请时间</span></th>
+                        <th class="w310"><span>申请公司</span></th>
+                        <th><span>申请电话</span></th>
+                        <th><span style="border-right: 0px;">申请状态</span></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2017-05-01</td>
+                        <td>万达企业责任有限公司</td>
+                        <td>17723311224</td>
+                        <td>未审核</td>
+                    </tr>
+                    <tr>
+                        <td>2017-05-01</td>
+                        <td>万达企业有限公司</td>
+                        <td>17723311224</td>
+                        <td>审核中</td>
+                    </tr>
+                </tbody>
+            </table>
+            <ul class="grxg_form_ym">
+                <li>首页</li>
+                <li>上一页</li>
+                <li>
+                    <span>1</span>/
+                    <span>5</span>
+                </li>
+                <li>下一页</li>
+                <li>末页</li>
+            </ul>
+
+        </div>
+    </div>
+
+</section>
+<footer class="footer">
+    <ul>
+        <li>
+            <a href="index.html">
+                <i class="glyphicon glyphicon-home"></i>
+                <span>首页</span>
+            </a>
+        </li>
+        <li>
+            <a href="user_Join.html">
+                <i class="glyphicon glyphicon-usd"></i>
+                <span>定金加盟</span>
+            </a>
+        </li>
+        <li>
+            <a href="Uer_Cash_Transfer.html">
+                <i class="glyphicon glyphicon-send"></i>
+                <span>现金互转</span>
+            </a>
+        </li>
+        <li>
+            <a href="Uer_txsq.html">
+                <i class="glyphicon glyphicon-tags"></i>
+                <span>提现申请</span>
+            </a>
+        </li>
+        <li>
+            <a href="Uer_syzxj.html">
+                <i class="glyphicon glyphicon-paperclip"></i>
+                <span>收益转现金</span>
+            </a>
+        </li>
+    </ul>
+</footer>
+<script>
+    $(function () {
+        //table toggle
+        $(".mm_xg li").click(function(){
+            $(this).addClass("mm_xg_hover").siblings().removeClass("mm_xg_hover");
+            var text=$(this).html();
+            var index;
+            $(".mm_xg li").each(function(key){
+                if(text==$(this).html()){
+                    return index=key;
+                }
+            });
+            $(".mm_xg_form").each(function(k){
+                if(k==index){
+                    $(this).css({ "display": "block" }).siblings().css({ "display": "none" });
+                }
+            });
+        });
+        //input Verification
+        $('form').bootstrapValidator({
+            message: 'This value is not valid',
+            feedbackIcons: {
+                valid: 'glyphicon glyphicon-ok',
+                invalid: 'glyphicon glyphicon-remove',
+                validating: 'glyphicon glyphicon-refresh'
+            },
+            fields: {
+                company_ID: {
+                    validators: {
+                        notEmpty: { message: '请输入公司名字!'}
+                    }
+                },
+                company_add: {
+                    validators: {
+                        notEmpty: { message: '请输入公司地址!'}
+                    }
+                },
+                company_tell: {
+                    validators: {
+                        notEmpty: { message: '请输入公司电话!'}
+                    }
+                },
+                grxg_checkbox: {
+                    validators: {
+                        notEmpty: { message: '请选择!'}
+                    }
+                },
+                yy_zz_bh: {
+                    validators: {
+                        notEmpty: { message: '请输入公司营业执照编号!'}
+                    }
+                },
+                yy_zz_pic: {
+                    validators: {
+                        notEmpty: { message: '请上传图片!'}
+                    }
+                }
+            }
+        });
+
+    });
+
+</script>
+</body>
+</html>

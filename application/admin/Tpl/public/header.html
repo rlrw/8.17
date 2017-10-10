@@ -1,0 +1,38 @@
+
+
+
+        <div class="content_menu_fl fl">
+                <p class="p_first-child">
+                    <span class="glyphicon glyphicon-tags"></span>
+                    管理中心
+                    <i class="glyphicon-minus"></i>
+                </p>
+                <div class="content_menu_fl_ct">
+                    <a href="Add_client.html">添加客户</a>
+                    <a href="User_level_settings.html">用户等级设置</a>
+                    <a href="Basics_setting.html">基础参数设置</a>
+                    <a <if condition="$color eq '公司'">class="a_hover"</if> href="{:U('Staff/show?color=公司')}" >公司职员管理</a>
+                   <a <if condition="$color eq '审核'">class="a_hover"</if> href="{:U('Examine/show_examine?color=审核')}">审核流程管理</a>
+                </div>
+                <p>
+                    <span class="glyphicon glyphicon-send"></span>
+                    审核中心
+                    <i class="glyphicon-plus"></i>
+                </p>
+                <div class="content_menu_fl_ct" style="display: none;">
+                 <if condition="$color eq '汇款'">class="a_hover"</if> href="{:U('Remit/show_remit?color=汇款')}">汇款列表</a>
+                   <a <if condition="$color eq '提现'">class="a_hover"</if> href="{:U('Remit/show_tx?color=提现')}">提现列表</a>
+                    <a <if condition="$color eq '代理'">class="a_hover"</if> href="{:U('Remit/show_agent?color=代理')}">代理商列表</a>
+                    <a <if condition="$color eq '服务'">class="a_hover"</if> href="{:U('Remit/show_service?color=服务')}">服务中心列表</a>
+                    <a <if condition="$color eq '购车'">class="a_hover"</if> href="{:U('Remit/show_buy?color=购车')}">购车信息列表</a>
+                </div>
+                <p>
+                    <span class="glyphicon glyphicon-flag"></span>
+                    服务中心
+                    <i class="glyphicon-plus"></i>
+                </p>
+                <div class="content_menu_fl_ct" style="display: none;">
+                    <a href="ZH_management.html">账号管理</a>
+                </div>
+                </div>
+            

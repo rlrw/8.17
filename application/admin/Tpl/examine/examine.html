@@ -1,0 +1,181 @@
+﻿<include file="Public:head" />
+<body>
+<div class="content_menu_fr" style="width: 100%">
+            <h1  class="text-center">审核流程管理</h1>
+
+            <div class="Audit_management form-inline" >
+                <div class="form-group" >
+                    <label>审核流程：</label>
+                    <select class="form-control" name="Audit_management" id="Audit_sec">
+                        <foreach name="menu_list" item="val">
+                            <option value="{$val.menu_id}" class="menu">{$val.menu_name}</option>
+                        </foreach>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>职员列表：</label>
+                    <select class="form-control" name="" id="Audit_zy_list">
+                        <foreach name="role_list" item="val">
+                            <option value="{$val.role_id}" class="role">{$val.role_name}</option>
+                        </foreach>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <button type="button" class="btn btn-success">新增流程节点</button>
+                </div>
+                <span style="color: red; display: block; margin-top: 20px;">注：如果有任何流程被修改，都会将现有正在审核中的数据全部从新审核</span>
+            </div>
+            <div class="Audit_management_menu">
+                <ul>
+                    <li>
+                        <table>
+                            <foreach name="examine_remit" item="val">
+                                <tr>
+                                    <td><span>第{$val.sort}步</span></td>
+                                    <td><span>审核人：{$val.role_name}</span></td>
+                                    <td>删除</td>
+                                </tr>
+                            </foreach>
+                        </table>
+                    </li>
+                    <li>
+                        <table>
+                            <foreach name="examine_cash" item="val">
+                                <tr>
+                                    <td><span>第{$val.sort}步</span></td>
+                                    <td><span>审核人：{$val.role_name}</span></td>
+                                    <td>删除</td>
+                                </tr>
+                            </foreach>
+                        </table>
+                    </li>
+                    <li>
+                        <table>
+                            <foreach name="examine_agent" item="val">
+                                <tr>
+                                    <td><span>第{$val.sort}步</span></td>
+                                    <td><span>审核人：{$val.role_name}</span></td>
+                                    <td>删除</td>
+                                </tr>
+                            </foreach>
+                        </table>
+                    </li>
+                    <li>
+                        <table>
+                            <foreach name="examine_service" item="val">
+                                <tr>
+                                    <td><span>第{$val.sort}步</span></td>
+                                    <td><span>审核人：{$val.role_name}</span></td>
+                                    <td>删除</td>
+                                </tr>
+                            </foreach>
+                        </table>
+                    </li>
+                    <li>
+                        <table>
+                            <foreach name="examine_buy" item="val">
+                                <tr>
+                                    <td><span>第{$val.sort}步</span></td>
+                                    <td><span>审核人：{$val.role_name}</span></td>
+                                    <td>删除</td>
+                                </tr>
+                            </foreach>
+                        </table>
+                    </li>
+                    <li>
+                        <table>
+                            <foreach name="examine_back" item="val">
+                                <tr>
+                                    <td><span>第{$val.sort}步</span></td>
+                                    <td><span>审核人：{$val.role_name}</span></td>
+                                    <td>删除</td>
+                                </tr>
+                            </foreach>
+                        </table>
+                    </li>
+                </ul>
+            </div>
+        </div>
+<script>
+            +function () {
+                $("#Audit_sec").get(0).selectedIndex=0;
+                $(".Audit_management_menu li:first-child").siblings().addClass("hidden");
+                $("#Audit_sec").change(function () {
+                    var checkIndex=$("#Audit_sec ").get(0).selectedIndex;
+                    $(".Audit_management_menu li").each(function (k) {
+                        if(k==checkIndex){
+                            $(this).removeClass("hidden").siblings().addClass("hidden")
+                        }else {
+                            return;
+                        }
+                    });
+                });
+
+                $("button[type='button']").click(function () {
+                        var text=$("#Audit_zy_list").find("option:selected").text();
+                        if(confirm("确认要添加吗？")){
+                            var menu=$(".menu:selected").val();
+                            var role=$(".role:selected").val();
+                            var len;
+                            $(".Audit_management_menu li").each(function(){
+                                if($(this).attr("class")!="hidden"){
+                                    len=$(this).find("tr").length+1;
+                                }
+                            });
+                            $.ajax({
+                                url: "{:U('Examine/add_examine')}",
+                                type: 'post',
+                                data: {m: menu, r: role, l: len},
+                                success: function () {
+                                    $(".Audit_management_menu li").each(function(){
+                                        if($(this).attr("class")!="hidden"){
+                                            var length=$(this).find("tr").length+1;
+                                            var html="<tr><td><span>第"+length+"步</span></td><td><span>审核人：" + text + "</span></td><td>删除</td> </tr>";
+                                            $(this).find("table").append(html);
+                                            $(".Audit_management_menu li tr:last-child td:last-child").click(RemoveProcess);
+                                        }else {
+                                            return;
+                                        }
+                                    });
+                                },
+                                error:function(){
+                                    alert('操作有误!');
+                                    return;
+                                }
+                            })
+
+                            }else {
+                            return;
+                        }
+
+                });
+                $(".Audit_management_menu li tr td:last-child").on("click",RemoveProcess);
+                function RemoveProcess() {
+                    if(confirm("确认要删除吗？")){
+                        var x=$(this);
+                        var menu=$(".menu:selected").val();
+                        var h=$(this).parent().find("td:first-child").find("span").html();
+                        var n=h.substring(1, h.length-1);
+                        $.ajax({
+                            url:"{:U('Examine/del_examine')}",
+                            type:'post',
+                            data:{m:menu,sort:n},
+                            success:function(e){
+                                x.parent().nextAll().find("td:first-child").each(function (j,data) {
+                                    var Fhtml=$(data).children().html();
+                                    var num=Fhtml.substring(1,Fhtml.length-1);
+                                    num--;
+                                    var fHtml="第"+num+"步";
+                                    $(this).find("span").html(fHtml);
+                                });
+                                x.parent().remove();
+                            }
+                        });
+                    }else {
+                        return;
+                    }
+                }
+            }();
+        </script>
+</body>
+</html>

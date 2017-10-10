@@ -1,0 +1,3 @@
+<?php
+//000000000000s:295:"SELECT cxh_users.*,fx_user.pname,fx_user.lv,fx_user.pid,level.level_name,service.area FROM `cxh_users` LEFT JOIN fx_user ON cxh_users.id=fx_user.uid LEFT JOIN level ON cxh_users.dls_lv=level.level_id LEFT JOIN service ON cxh_users.fwzx=service.new_id ORDER BY cxh_users.reg_time desc LIMIT 0,8  ";
+?>

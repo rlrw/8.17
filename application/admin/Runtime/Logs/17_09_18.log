@@ -1,0 +1,99 @@
+[ 2017-09-18T09:18:37+08:00 ] 192.168.1.111 /admin.php/
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: role_name D:\phpStudy\WWW\application\admin\Runtime\Cache\a4808b0abfd86dcf6a8b1993c999793c.php 第 35 行.
+NOTIC: [8] Undefined index: staff_account D:\phpStudy\WWW\application\admin\Runtime\Cache\a4808b0abfd86dcf6a8b1993c999793c.php 第 36 行.
+NOTIC: [8] Undefined index: status D:\phpStudy\WWW\application\admin\Runtime\Cache\a4808b0abfd86dcf6a8b1993c999793c.php 第 55 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.015600s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015600s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-09-18T09:18:39+08:00 ] 192.168.1.111 /admin.php/admin/login.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: verify D:\phpStudy\WWW\application\admin\Runtime\Cache\26e0773d10aead9269ee1a28630267fd.php 第 35 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.015600s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015600s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-09-18T09:18:43+08:00 ] 192.168.1.111 /admin.php/admin/check_staff.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: verify D:\phpStudy\WWW\application\admin\Lib\Action\AdminAction.class.php 第 27 行.
+NOTIC: [2048] Declaration of StaffModel::check() should be compatible with Model::check($value, $rule, $type = 'regex') D:\phpStudy\WWW\application\admin\Lib\Model\StaffModel.class.php 第 8 行.
+SQL: SHOW COLUMNS FROM `staff` [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `staff` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `staff` LEFT JOIN role on staff.staff_role=role.role_id WHERE (  staff_account='admin' and  staff_password= 'e10adc3949ba59abbe56e057f20f883e' ) LIMIT 1   [ RunTime:0.000000s ]
+
+[ 2017-09-18T09:18:45+08:00 ] 192.168.1.111 /admin.php/index/index.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.015600s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015600s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-09-18T09:18:48+08:00 ] 192.168.1.111 /admin.php/core/index.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined variable: info D:\phpStudy\WWW\application\admin\Runtime\Cache\62d4ae5ced6cb0a7e42fa18402c2369c.php 第 91 行.
+NOTIC: [8] Undefined variable: page D:\phpStudy\WWW\application\admin\Runtime\Cache\62d4ae5ced6cb0a7e42fa18402c2369c.php 第 317 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.031200s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031200s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000000s ]
+
